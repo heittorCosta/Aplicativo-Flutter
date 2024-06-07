@@ -1,30 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-
-class Home extends StatefulWidget {
-  const Home({super.key});
-
-  @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 191, 166, 235),
-      appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
-        title: Text("Filmes", style: TextStyle(color: Colors.white), ),
-      ),
-      body: Container(
-        child: Text("Olá"),
-      ),
-    );
-  }
-}
-
 class MoviesScreen extends StatefulWidget {
   const MoviesScreen({super.key});
 
@@ -33,41 +9,82 @@ class MoviesScreen extends StatefulWidget {
 }
 
 class _MoviesScreenState extends State<MoviesScreen> {
+ void initState(){
+    super.initState();
+    leituradados();
+  }
+  List  dado =[];
+ Future<void> leituradados() async{
 
-_filmes() async {
-  List Filmes = <Filme>[];
-  String url = 'https://raw.githubusercontent.com/danielvieira95/DESM-2/master/filmes.json';
-  http.Response response = await http.get(Uri.parse(url));
-  Filmes = json.decode(response.body);
-  print(Filmes);
-}  
+    String url = "https://raw.githubusercontent.com/danielvieira95/DESM-2/master/filmes.json";
+    http.Response resposta = await http.get(Uri.parse(url));
+   
+     if(resposta.statusCode ==200){
+        setState(() {
+      dado = jsonDecode(resposta.body)  as List<dynamic>;// conversao dos produtos para uma lista convertendo do formato json
+    print(dado);
+    });
+     }
+
+     else {
+      print(resposta.statusCode);
+      throw Exception('Falha ao consumir api');
+    }
+   
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 191, 166, 235),
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
-        title: Text("Filmes", style: TextStyle(color: Colors.white), ),
+        title: Text("Filmes"),
       ),
-      body: Container(
-        child: ElevatedButton(onPressed: _filmes, child: Text("Filmes")),
-        
-        
+      body: Center(
+        child:       
+          ListView.builder(
+            itemCount: dado.length,
+            
+            itemBuilder:(context,index ){
+            final item = dado[index];
+            return ListTile(
+            title: Text("Filme: ${item["nome"]}",style: TextStyle(fontSize: 18),
+            textAlign: TextAlign.center,
+            ),
+            subtitle: Column(
+              children: [
+                Image.network(item["imagem"], width: 300, height: 200, scale: 1,),
+                Text("Ano de lançamento ${item["ano de lançamento"]}",style: TextStyle(fontSize: 18),),
+                Text("Nota ${item["nota"]}",style: TextStyle(fontSize: 18),),
+                Text("Duração: ${item["duração"]}",style: TextStyle(fontSize: 18),),
+              ],
+            ),
+            
+            );
+            } ),
+
+
       ),
-    );
+      );
+    
   }
 }
 
-class Filme{
-  String nome;
-  String imagem;
-  String duracao;
-  String anoLancamento;
-  String nota;
-   
-   Filme(this.nome, this.imagem, this.duracao, this.anoLancamento, this.nota);
 
-   factory Filme.fromJson(Map<String,dynamic> json){
-    return Filme(json['nome'],json['imagem'],json['duração'],json['ano de lançamento'],json['nota']);
-   }
+
+
+
+
+
+
+
+
+class Produto_item{
+  String id;
+  String nome;
+  String valor;
+  String qtde;
+  Produto_item(this.id, this.nome, this.valor, this.qtde);
+  factory Produto_item.fromJson(Map<String, dynamic> json){
+    return Produto_item(json['id'],json['nome'],json['valor'],json['qtde']);
+  }
 }
