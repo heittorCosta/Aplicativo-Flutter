@@ -16,7 +16,7 @@ class _MoviesScreenState extends State<MoviesScreen> {
   List  dado =[];
  Future<void> leituradados() async{
 
-    String url = "https://raw.githubusercontent.com/danielvieira95/DESM-2/master/filmes.json";
+    String url = "http://10.109.79.4:3000/cortes";
     http.Response resposta = await http.get(Uri.parse(url));
    
      if(resposta.statusCode ==200){
@@ -37,7 +37,7 @@ class _MoviesScreenState extends State<MoviesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Filmes"),
+        title: Text("Cortes"),
       ),
       body: Center(
         child:       
@@ -47,15 +47,15 @@ class _MoviesScreenState extends State<MoviesScreen> {
             itemBuilder:(context,index ){
             final item = dado[index];
             return ListTile(
-            title: Text("Filme: ${item["nome"]}",style: TextStyle(fontSize: 18),
+            title: Text("Corte: ${item["nome"]}",style: TextStyle(fontSize: 18),
             textAlign: TextAlign.center,
             ),
             subtitle: Column(
               children: [
                 Image.network(item["imagem"], width: 300, height: 200, scale: 1,),
-                Text("Ano de lançamento ${item["ano de lançamento"]}",style: TextStyle(fontSize: 18),),
-                Text("Nota ${item["nota"]}",style: TextStyle(fontSize: 18),),
-                Text("Duração: ${item["duração"]}",style: TextStyle(fontSize: 18),),
+                // Text("Ano de lançamento ${item["ano de lançamento"]}",style: TextStyle(fontSize: 18),),
+                Text("Tempo: ${item["nota"]}",style: TextStyle(fontSize: 18),),
+                // Text("Duração: ${item["duração"]}",style: TextStyle(fontSize: 18),),
               ],
             ),
             

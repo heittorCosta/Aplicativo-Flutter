@@ -24,7 +24,7 @@ _cadastrar(){
 _login() async{
    bool encuser= false;
    List clientes = <Usuario>[];
-    String url = "http://10.109.83.11:3000/usuarios";
+    String url = "http://192.168.0.23:3000/usuarios";
     http.Response response = await http.get(Uri.parse(url));
     clientes = json.decode(response.body);
     print(clientes[1]['nome']);

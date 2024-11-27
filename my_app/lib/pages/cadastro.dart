@@ -21,7 +21,7 @@ class _CadastroclienteState extends State<Cadastrocliente> {
       
 
     };
-    String url = "http://10.109.83.11:3000/usuarios";
+    String url = "http://10.109.79.4:3000/usuarios";
     http.post(Uri.parse(url),
     headers:<String,String>{
       'Content-type': 'application/json; charset=UTF-8',
@@ -100,7 +100,7 @@ class _CadastroclienteState extends State<Cadastrocliente> {
             ),
            ElevatedButton(onPressed: _cadastrarusuario, child: Text("Cadastrar")),
             ElevatedButton(onPressed: (){
-              http.delete(Uri.parse('http://10.109.83.11:3000/usuarios/${user_n.text}'));
+              http.delete(Uri.parse('http://10.109.79.4:3000/usuarios${user_n.text}'));
               user_n.text = "";
             }, child: Text("Deletar")),
           ],

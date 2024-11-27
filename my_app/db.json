@@ -1,0 +1,45 @@
+{
+  "usuarios": [
+    {
+      "id": "2",
+      "nome": "admin",
+      "senha": "admin"
+    },
+    {
+      "id": "3",
+      "nome": "user",
+      "senha": "user123"
+    },
+    {
+      "id": "4",
+      "nome": "daniel",
+      "senha": "123456"
+    },
+    {
+      "id": "Talita",
+      "login": "Talita",
+      "senha": "123456"
+    },
+    {
+      "id": "joao",
+      "login": "joao",
+      "senha": "joao"
+    }
+  ],
+  "cortes": [
+    {
+      "nome": "DEGRADE",
+      "imagem": "https://th.bing.com/th/id/OIP.Ji8MoRddiGoq55UN8iV6YQAAAA?rs=1&pid=ImgDetMain",
+      "duração": "2.3 horas",
+      "ano de lançamento": "2006",
+      "nota": "3"
+    },
+    {
+      "nome": "CABULOSO",
+      "imagem": "https://th.bing.com/th/id/OIP.sbkw2xcmazY4KrKNcHuu3QAAAA?rs=1&pid=ImgDetMain",
+      "duração": "2.3 horas",
+      "ano de lançamento": "2006",
+      "nota": "5"
+    }
+  ]
+}
