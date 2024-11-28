@@ -1,45 +1,86 @@
 {
   "usuarios": [
     {
-      "id": "2",
-      "nome": "admin",
-      "senha": "admin"
-    },
-    {
-      "id": "3",
-      "nome": "user",
-      "senha": "user123"
-    },
-    {
-      "id": "4",
-      "nome": "daniel",
-      "senha": "123456"
-    },
-    {
-      "id": "Talita",
-      "login": "Talita",
-      "senha": "123456"
-    },
-    {
       "id": "joao",
       "login": "joao",
-      "senha": "joao"
+      "senha": "1234"
+    },
+    {
+      "id": "maria",
+      "login": "maria",
+      "senha": "abcd"
+    },
+    {
+      "id": "heittor",
+      "login": "heittor",
+      "senha": "heittor"
+    },
+    {
+      "id": "natalia",
+      "login": "natalia",
+      "senha": "123"
+    },
+    {
+      "id": "admin",
+      "login": "admin",
+      "senha": "admin"
     }
   ],
   "cortes": [
     {
-      "nome": "DEGRADE",
-      "imagem": "https://th.bing.com/th/id/OIP.Ji8MoRddiGoq55UN8iV6YQAAAA?rs=1&pid=ImgDetMain",
-      "duração": "2.3 horas",
-      "ano de lançamento": "2006",
-      "nota": "3"
+      "id": "Degradê",
+      "nome": "Degradê",
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJeNWWqk-4XqIpTWqrI-2YL6DW0H7M09hReA&s",
+      "nota": "45 minutos"
     },
     {
-      "nome": "CABULOSO",
-      "imagem": "https://th.bing.com/th/id/OIP.sbkw2xcmazY4KrKNcHuu3QAAAA?rs=1&pid=ImgDetMain",
-      "duração": "2.3 horas",
-      "ano de lançamento": "2006",
-      "nota": "5"
+      "id": "Navalhado",
+      "nome": "Navalhado",
+      "imagem": "https://i.pinimg.com/736x/ef/9d/15/ef9d15ac15d1c1db4c18064c7cef76c4.jpg",
+      "nota": "50 minutos"
+    },
+    {
+      "id": "Clássico",
+      "nome": "Clássico",
+      "imagem": "https://atanews.com.br/images/noticias/15290/15022019151900_FOTO.jpg",
+      "nota": "40 minutos"
+    }
+  ],
+  "agendamentos": [
+    {
+      "id": "1",
+      "usuarioId": "joao",
+      "corteId": "Degradê",
+      "data": "2024-11-30",
+      "horario": "14:00"
+    },
+    {
+      "id": "2",
+      "usuarioId": "maria",
+      "corteId": "Degradê",
+      "data": "2024-12-01",
+      "horario": "10:30"
+    },
+    {
+      "id": "b837",
+      "corte_id": "Degradê",
+      "corte_nome": "Degradê",
+      "data": "2024-11-30",
+      "hora": "16:45"
+    },
+    {
+      "id": "8000",
+      "corte_id": "Clássico",
+      "corte_nome": "Clássico",
+      "data": "2024-11-29",
+      "hora": "13:45"
+    },
+    {
+      "id": "899b",
+      "corte_id": "Degradê",
+      "corte_nome": "Degradê",
+      "data": "2024-11-29",
+      "hora": "15:54"
     }
   ]
 }
